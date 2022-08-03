@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dicee</title>
+    <link rel="stylesheet" href="dice.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Refresh Me</h1>
+
+      <div class="dice">
+        <p>Player 1</p>
+        <img class="img1" src="images/dice1.png" id="check"/>
+      </div>
+
+      <div class="dice">
+        <p>Player 2</p>
+        <img class="img2" src="images/dice6.png"id="check2" />
+      </div>
+    </div>
+    <button onclick="press()">
+    click</button>
+    <script >
+      function press(){
+      const player1=Math.floor(Math.random()*6)+1;
+      const play1device=`images/dice${player1}.png`;
+      document.getElementById("check").setAttribute("src",play1device);
+
+      const player2=Math.floor(Math.random()*6)+1;
+      const play2device=`images/dice${player2}.png`;
+      document.getElementById("check2").setAttribute("src",play2device);
+       
+      if( player1>player2 ){document.querySelector("h1").innerHTML="Player 1 win"}
+      else if(player2>player1){document.querySelector("h1").innerHTML="Player 2 win"}
+      else{document.querySelector("h1").innerHTML="Draw"}
+
+      }
+    
+    </script>
+  </body>
+</html>
